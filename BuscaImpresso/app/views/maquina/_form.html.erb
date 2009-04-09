@@ -1,0 +1,97 @@
+Selecione um dos modelos abaixo para a criação da máquina:<br>
+<%= link_to_remote "PLANA", :url => {:action => 'altera_maquina', :maquina => 'PLANA'	 }%> -
+<%= link_to_remote "ROTATIVA", :url => {:action => 'altera_maquina', :maquina => 'ROTATIVA'	 }%> -
+<%= link_to_remote "INTERCALAÇÃO", :url => {:action => 'altera_maquina', :maquina => 'INTERCALACAO'	 }%> <br>
+<%= link_to_remote "DOBRADEIRA", :url => {:action => 'altera_maquina', :maquina => 'DOBRADEIRA'	 }%> -
+<%= link_to_remote "PICOTAR", :url => {:action => 'altera_maquina', :maquina => 'PICOTAR'	 }%> -
+<%= link_to_remote "GUILHOTINA", :url => {:action => 'altera_maquina', :maquina => 'GUILHOTINA'	 }%>
+
+<% form_for :maquina, @maquina, :url => {:action => 'edit' } do |u| %>
+<p>
+<label_for"Descricao">Descrição: </label><br>
+<%= u.text_field "descricao", :size => 40 %>
+</p>
+
+<p>
+<label_for"largura maxima1">Largura máxima lado 1 : </label>
+<%= u.text_field "largura_maxima1", :size => 5 %>(mm)
+</p>
+
+<p>
+<label_for"largura minima1">Largura mínima lado 1 : </label>
+<%= u.text_field "largura_minima1", :size => 5 %>(mm)
+</p>
+
+<p>
+<label_for"Largura Maxima2">Largura Máxima lado 2 : </label>
+<%= u.text_field "largura_maxima2", :size => 5 %>(mm)
+</p>
+
+<p>
+<label_for"largura minima2">Largura mínima lado 2 : </label>
+<%= u.text_field "largura_minima2", :size => 5 %>(mm)
+</p>
+
+<p>
+<label_for"tamanho pinca">Tamanho da pinça de impressão: </label>
+<%= u.text_field "tamanho_pinca", :size => 5 %>(mm)
+</p>
+
+<p>
+<label_for"Acerto">Tempo de acerto para a máquina: </label>
+<%= u.text_field "acerto", :size => 5 %>(minutos)
+</p>
+
+<p>
+<label_for"numerador">Quantidade de numeradores (se houver): </label>
+<%= u.text_field "numerador" , :size => 5 %>
+</p>
+
+<p>
+<label_for"quebra1000">Quebra (até 1000 exemplares): </label>
+<%= u.text_field "quebra1000", :size => 5 %>(%)
+</p>
+
+<p>
+<label_for"markup">Quebra (até 5000 exemplares): </label>
+<%= u.text_field "quebra5000", :size => 5 %> (%)
+</p>
+
+<p>
+<label_for"observações">Quebra (mais que 5000 exemplares): </label>
+<%= u.text_field "quebra_5000", :size => 5  %> (%)
+</p>
+
+<p>
+<label_for"reducao chapado">Redução na impressão de chapados: </label>
+<%= u.text_field "reducao_chapado", :size => 5  %>(%)
+</p>
+
+<p>
+<label_for"reducao numerador">Redução impressão de documentos numerados: </label>
+<%= u.text_field "reducao_numerador", :size => 5 %>(%)
+</p>
+
+<p>
+<label_for"acerto numerador">Tempo de acerto para numerador: </label>
+<%= u.text_field "acerto_numerador", :size => 5 %>(minutos)
+</p>
+
+<p>
+<label_for"quebra chapado">Quebra de papel para impressão chapado: </label>
+<%= u.text_field "quebra_chapado", :size => 5 %>(%)
+</p>
+
+<p>
+<label_for"Acerto">Ciclo guilhotina (maquina rotativa): </label>
+<%= u.text_field "ciclo_guilhotina", :size => 5 %>(cm)
+</p>
+
+<p>
+<label_for"custo">Custo hora/máquina: </label>
+<%= u.text_field "custo", :size => 5 %>(R$)
+</p>
+
+<%= submit_tag "Salvar" %> ou <%= link_to "Cancelar", :action => "list", :controller => "maquina" %>
+<% end -%>
+<br>

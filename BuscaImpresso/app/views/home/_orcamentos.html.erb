@@ -1,0 +1,17 @@
+<% unless @lista.empty? %>
+<strong> Resultados da pesquisa </strong><br>
+<hr>
+<% @lista.each do |l| %>
+<br>
+Empresa: <%= l[:empresa] %> <br>
+Valor: <%= number_to_currency(l[:custo], :unit => "R$") %><br>
+Formato: <%= l[:formato] %> <br> <br>
+<% if (session[:permissao] == 1) %>
+
+<%= link_to "Enviar ordem de serviço a empresa", {:action => "enviar_pedido", :orcamento => l[:orcamento], :quantidade => l[:quantidade], :empresa_id => l[:empresa_id], :valor => l[:custo] },:confirm => "Sua solicitação será enviada a todos os vendedores desta gráfica, realmente confirma o envio da ordem de serviço?" %><br><br>
+<%= link_to "Fechar negócio", {:action => "enviar_pedido", :orcamento => l[:orcamento], :quantidade => l[:quantidade], :empresa_id => l[:empresa_id], :valor => l[:custo] },:confirm => "Sua solicitação será enviada a todos os vendedores desta gráfica, realmente confirma o envio da ordem de serviço?" %><br><br>
+<% end %>
+<hr>
+<% end else %>
+Infelizmente não foi encontrados produtos para sua pesquisa
+<% end %>

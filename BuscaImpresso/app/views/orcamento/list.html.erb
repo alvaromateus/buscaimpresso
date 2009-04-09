@@ -1,0 +1,26 @@
+<h1>Orçamentos</h1>
+<% if flash[:notice] %>
+<%= stylesheet_link_tag 'default' %>
+<p style="color: green; font-style: italic"><%= flash[:notice] %></p>
+<% end %>
+
+<p> <%= link_to "Novo Orçamento", :action => "edit" %></p>
+<table border="0" cellpading="1" cellpacing="1">
+<tbody>
+<tr>
+	<tt></tt>
+	<tt></tt>
+
+</tr>
+<% @orcamentos.each do |orcamento| %>
+<tr>
+	<td><%= orcamento.descricao %><td>
+
+	<td>
+		<%= link_to "Editar", :action => "edit", :id => orcamento %> ou
+		<%= link_to "Excluir", { :action => "delete", :id => orcamento }, :confirm => "Deseja realmente excluir o orçamento?" %>
+	</td>
+</tr>
+<tbody>
+<% end %>
+</table>

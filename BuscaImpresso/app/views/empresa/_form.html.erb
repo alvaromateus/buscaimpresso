@@ -1,0 +1,136 @@
+<% form_for :empresa, @empresa, :url => {:action => 'edit' } do |u| %>
+<p>
+<label_for"razao_social"> Plano Escolhido: </label>
+<%= u.collection_select :plano_id, @planos, :id, :descricao, options = {:prompt => "Selecione o plano desejado"} %>
+</p>
+
+<p>
+<label_for"razao_social">Razao Social: </label>
+<%= u.text_field "razao_social", :size => 25 %>
+</p>
+
+<p>
+<label_for"login">Nome Fantasia: </label>
+<%= u.text_field "nome_fantasia", :size => 25 %>
+</p>
+
+<p>
+<label_for"senha">Inscrição Estadual: </label>
+<%= u.text_field "inscricao_estadual", :size => 15 %>
+</p>
+
+<p>
+<label_for"fone">Inscrição Municipal: </label>
+<%= u.text_field "inscricao_municipal", :size => 15 %>
+</p>
+
+
+<p>
+<label_for"email">Email: </label>
+<%= u.text_field "email", :size => 30 %>
+</p>
+
+<p>
+<label_for"email">Home Page: </lael>
+<%= u.text_field "homepage", :size => 30 %>
+</p>
+
+<p>
+<label_for"email">Telefone: </label>
+<%= u.text_field "telefone" , :size => 15 %> (Ex: 2222-2222)
+</p>
+
+<p>
+<label_for"email">Fax: </label>
+<%= u.text_field "fax", :size => 15 %> (Ex: 2222-2222)
+</p>
+
+<p>
+<label_for"email">Login: </label>
+<%= u.text_field "login", :size => 15 %>
+</p>
+
+<p>
+<label_for"Senha">Senha: </label>
+<%= u.password_field "senha" , :size => 10 %>
+</p>
+
+<strong><p>Endereço</p></strong>
+<p>
+<% form_for :form_cep, @cep, :url => {:action => 'edit' } do |c| %>
+<label_for "nome">CEP: </label>
+<%= c.text_field  "cep", :size => 15 %>
+</p>
+
+<p>
+<label_for"logradouro">Logradouro: </label>
+<%= c.text_field  "logradouro" %>
+</p>
+
+<p>
+<label_for"tipo_logradouro">Tipo Logradouro: </label>
+
+<select name="form_cep[tipo_logradouro]" id="tipo_logradouro" class="text"><br>
+                        <option selected='selected'>Selecione o tipo de logradouro</option>
+                        <option <% if @cep.tipo_logradouro == 'Avenida'  %>  selected='selected' <% end %>>Avenida</option>
+                        <option <% if @cep.tipo_logradouro == 'Rua'  %>  selected='selected' <% end %> >Rua</option>
+                        <option <% if @cep.tipo_logradouro == 'Praça'  %>  selected='selected' <% end %> >Praça</option>
+                        <option <% if @cep.tipo_logradouro == 'Beco'  %>  selected='selected' <% end %> >Beco</option><br>
+</p>
+</select>
+
+<p>
+<label_for"complemento">Complemento: </label>
+<%= u.text_field  "complemento",:size => 20 %> (Ex: n 181, apto 9)
+</p>
+
+
+<p>
+<label_for "bairro">Bairro: </label>
+<%= c.text_field  "bairro", :size => 20 %>
+</p>
+
+<p>
+<label_for"cidade">Cidade: </label>
+<%= c.text_field "cidade", :size => 20 %>
+</p>
+
+<p>
+<label_for"complemento">Estado: </label>
+
+<select name="form_cep[uf]" id="estado" class="text">
+						<option selected='selected'>Selecione o Estado</option>
+                        <option value='AC' <% if @cep.uf == 'AC'  %>  selected='selected' <% end %> >Acre</option>
+                        <option value='AL' <% if @cep.uf == 'AC'  %>  selected='selected' <% end %>> Alagoas</option>
+                        <option value='AP' <% if @cep.uf == 'AP'  %>  selected='selected' <% end %> >Amap&aacute;</option>
+                        <option value='AM' <% if @cep.uf == 'AM'  %>  selected='selected' <% end %>>Amazonas</option>
+                        <option value='BA' <% if @cep.uf == 'BA'  %>  selected='selected' <% end %>>Bahia</option>
+                        <option value='CE' <% if @cep.uf == 'CE'  %>  selected='selected' <% end %>>Cear&aacute;</option>
+                        <option value='DF' <% if @cep.uf == 'DF'  %>  selected='selected' <% end %>>Distrito Federal</option>
+                        <option value='ES' <% if @cep.uf == 'ES'  %>  selected='selected' <% end %>>Esp&iacute;rito Santo</option>
+                        <option value='GO' <% if @cep.uf == 'GO'  %>  selected='selected' <% end %>>Goias</option>
+                        <option value='MA' <% if @cep.uf == 'MA'  %>  selected='selected' <% end %>>Maranh&atilde;o</option>
+                        <option value='MT' <% if @cep.uf == 'MT'  %>  selected='selected' <% end %>>Mato Grosso</option>
+                        <option value='MS' <% if @cep.uf == 'MS'  %>  selected='selected' <% end %>>Mato Grosso do Sul</option>
+                        <option value='MG' <% if @cep.uf == 'MG'  %>  selected='selected' <% end %>>Minas Gerais</option>
+                        <option value='PA' <% if @cep.uf == 'PA'  %>  selected='selected' <% end %>>Par&aacute;</option>
+                        <option value='PB' <% if @cep.uf == 'PB'  %>  selected='selected' <% end %>>Para&iacute;ba</option>
+                        <option value='PR' <% if @cep.uf == 'PR'  %>  selected='selected' <% end %>>Paran&aacute;</option>
+                        <option value='PE' <% if @cep.uf == 'PE'  %>  selected='selected' <% end %>>Pernambuco</option>
+                        <option value='PI' <% if @cep.uf == 'PI'  %>  selected='selected' <% end %>>Piau&iacute;</option>
+                        <option value='RJ' <% if @cep.uf == 'RJ'  %>  selected='selected' <% end %>>Rio de Janeiro</option>
+                        <option value='RN' <% if @cep.uf == 'RN'  %>  selected='selected' <% end %>>Rio Grande do Norte</option>
+                        <option value='RS' <% if @cep.uf == 'RS'  %>  selected='selected' <% end %>>Rio Grande do Sul</option>
+                        <option value='RO' <% if @cep.uf == 'RO'  %>  selected='selected' <% end %>>Rond&ocirc;nia</option>
+                        <option value='RR' <% if @cep.uf == 'RR'  %>  selected='selected' <% end %>>Roraima</option>
+                        <option value='SC' <% if @cep.uf == 'SC'  %>  selected='selected' <% end %>>Santa Catarina</option>
+                        <option value='SP' <% if @cep.uf == 'SP'  %>  selected='selected' <% end %>>S&atilde;o Paulo</option>
+                        <option value='SE' <% if @cep.uf == 'SE'  %>  selected='selected' <% end %>>Sergipe</option>
+                        <option value='TO' <% if @cep.uf == 'TO'  %>  selected='selected' <% end %>>Tocantins</option>
+</p>
+</select>
+
+<%= submit_tag "Salvar" %>
+<% end -%>
+<% end -%>
+<br>

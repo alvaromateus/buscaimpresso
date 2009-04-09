@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag 'default' %>
+<% if error_messages_for "papel" %><strong>Seguintes erros encontrados</strong><br><% end %>
+<div class="erro">
+<%= error_messages_for "papel" %><br>
+</div>
+<div class="form">
+<h1>Papéis </h1>
+<%= render :partial => 'form' %>
+</div>

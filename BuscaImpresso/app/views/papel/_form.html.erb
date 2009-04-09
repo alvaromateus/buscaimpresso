@@ -1,0 +1,84 @@
+Selecione um dos modelos abaixo para a criação do papel:<br>
+<%= link_to_remote "COUCHET LISO", :url => {:action => 'altera_papel', :papel => 'COUCHET'	 }%> -
+<%= link_to_remote "OFF-SET", :url => {:action => 'altera_papel', :papel => 'OFF-SET'	 }%> -
+<%= link_to_remote "VERGÊ", :url => {:action => 'altera_papel', :papel => 'VERGE'	 }%> -
+<%= link_to_remote "SUPER BOND", :url => {:action => 'altera_papel', :papel => 'SUPER'	 }%> -
+<%= link_to_remote "CARTULINA", :url => {:action => 'altera_papel', :papel => 'CARTULINA'	 }%> <br>
+<%= link_to_remote "PAPEL JORNAL", :url => {:action => 'altera_papel', :papel => 'JORNAL'	 }%> -
+<%= link_to_remote "RECICLATO", :url => {:action => 'altera_papel', :papel => 'RECICLATO'	 }%> -
+<%= link_to_remote "FLOR POST", :url => {:action => 'altera_papel', :papel => 'FLOR POST'	 }%> -
+<%= link_to_remote "PAPEL CARTÃO", :url => {:action => 'altera_papel', :papel => 'CARTÃO'	 }%> <br>
+<%= link_to_remote "KRAFT", :url => {:action => 'altera_papel', :papel => 'KRAFT'	 }%> -
+<%= link_to_remote "FORMULARIO CONTÍNUO", :url => {:action => 'altera_papel', :papel => 'FORMULARIO'	 }%> -
+<%= link_to_remote "ENVELOPE LISO", :url => {:action => 'altera_papel', :papel => 'ENVELOPE'	 }%>
+
+<% form_for :papel, @papel, :url => {:action => 'edit' } do |u| %>
+
+
+<p>
+<label_for"Descricao">Descrição: </label><br>
+<%= u.text_field "descricao", :size => 40 %>
+</p>
+
+<p>
+<label_for"papel_carbono">Tipo: </label>
+<select name="papel[tipo]" id="tipo" class="text">
+						<option selected='selected'>Selecione o Tipo</option>
+                        <option value='BOBINA' <% if @papel.tipo == 'BOBINA'  %>  selected='selected' <% end %> >BOBINA</option>
+                        <option value='CONTINUO' <% if @papel.tipo == 'CONTINUO'  %>  selected='selected' <% end %>> CONTÍNUO</option>
+                        <option value='PLANO' <% if @papel.tipo == 'PLANO'  %>  selected='selected' <% end %> >PLANO</option>
+</select>
+</p>
+
+<p>
+<label_for"lado1">Largura: </label>
+<%= u.text_field "lado1", :size => 5 %>  (mm)
+</p>
+
+<p>
+<label_for"lado2">Altura: </label>
+<%= u.text_field "lado2", :size => 5 %> <br>(mm para papel plano - metros para bobinas)
+</p>
+
+<p>
+<label_for"gramatura">Gramatura do Papel: </label>
+<%= u.text_field "gramatura", :size => 10 %>  (g/m2)
+</p>
+
+<p>
+<label_for"precofolha">Custo (R$): </label>
+<%= u.text_field "preco_folha", :size => 10 %>
+</p>
+
+<p>
+<label_for"abs_tinta">Absorção de tinta: </label>
+<select name="papel[abs_tinta]" id="abs_tinta" class="text">
+						<option selected='selected'>...</option>
+                        <option value=0 <% if @papel.abs_tinta == 0.to_i  %>  selected='selected' <% end %> >Muito baixa</option>
+                        <option value=1 <% if @papel.abs_tinta == 1.to_i  %>  selected='selected' <% end %>> Baixa</option>
+                        <option value=2 <% if @papel.abs_tinta == 2.to_i  %>  selected='selected' <% end %>> Média</option>
+                        <option value=3 <% if @papel.abs_tinta == 3.to_i  %>  selected='selected' <% end %>> Alta</option>
+                        <option value=4 <% if @papel.abs_tinta == 4.to_i  %>  selected='selected' <% end %>> Muito alta</option>
+</select>
+
+</p>
+
+<p>
+<label_for"tira_retira">Tira/Retira: </label>
+<%= u.check_box "tira_retira" %>
+
+
+<p>
+
+<label_for"envelope">Envelope pronto: </label>
+<%= u.check_box "envelope_pronto" %>
+</p>
+
+<p>
+<label_for"papel_carbono">Papel Carbono: </label>
+<%= u.check_box "papel_carbono" %>
+</p>
+
+<%= submit_tag "Salvar" %> ou <%= link_to "Cancelar", :action => "list", :controller => "papel" %>
+<% end -%>
+<br>

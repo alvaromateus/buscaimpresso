@@ -1,0 +1,6 @@
+Lista de Processos do Tipo de Orçamento<br>
+<% @orcamentos_processo.each do |p| %>
+<%= p[:nome] %>
+<%= link_to_remote "Remover Processo", :update => "processos", :url => { :action => "remove_processo", :processo => p } %>
+<br>
+<% end %><br>

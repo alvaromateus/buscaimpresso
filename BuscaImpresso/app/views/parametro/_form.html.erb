@@ -1,0 +1,34 @@
+<% form_for :parametro, @parametro, :url => {:action => 'edit' } do |u| %>
+<p>
+<label_for"Refile padrao">Refile Padrão: </label>
+<%= u.text_field "refile_padrao", :size => 5 %> (mm)
+</p>
+
+<p>
+<label_for"tinta acerto">Quantidade de tinta para acerto: </label>
+<%= u.text_field "tinta_acerto", :size => 10 %> (gr)
+</p>
+
+<p>
+<label_for"preco tinta preta">Preço Tinta Preta: </label>
+R$ <%= u.text_field "preco_tinta_preta" , :size => 10 %> / kg
+</p>
+
+<p>
+<label_for"preco tinta cor">Preço Tinta Cor: </label>
+R$ <%= u.text_field "preco_tinta_cor", :size => 10 %> / kg
+</p>
+
+<p>
+<label_for"markup">Markup: </label>
+<%= u.text_field "markup", :size => 4 %> (%)
+</p>
+
+<p>
+<label_for"observações">Observações: </label><br>
+<%= u.text_area "observacoes" %>
+</p>
+
+<%= submit_tag "Salvar" %>
+<% end -%>
+<br>

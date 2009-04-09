@@ -1,0 +1,30 @@
+<h1>Empresas</h1>
+<%= stylesheet_link_tag 'default' %>
+
+<% if flash[:notice] %>
+
+<p style="color: green; font-style: italic"><%= flash[:notice] %></p>
+<% end %>
+
+<p> <%= link_to "Nova Empresa", :action => "edit" %></p>
+<table border="0" cellpading="1" cellpacing="1">
+<tbody>
+<tr>
+	<tt></tt>
+	<tt></tt>
+	<tt></tt>
+	<tt></tt>
+</tr>
+<% @empresas.each do |empresa| %>
+<tr>
+	<td><%= empresa.razao_social %><td>
+	<td><%= empresa.email %><td>
+	<td><%= empresa.telefone %><td>
+	<td>
+		<%= link_to "Editar", :action => "edit", :id => empresa %> ou
+		<%= link_to "Excluir", { :action => "delete", :id => empresa }, :confirm => "Deseja realmente excluir a empresa?" %>
+	</td>
+</tr>
+<tbody>
+<% end %>
+</table>

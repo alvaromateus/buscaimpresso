@@ -1,0 +1,9 @@
+<html>
+<%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag 'default' %>
+<h1><% if @usuario.new_record? %>Cadastro de Usuários <% else %> Editando o usuário <%= @usuario.nome %> <% end %></h1>
+<%= error_messages_for "usuario" %>
+<div class="form">
+<%= render :partial => 'form' %>
+</div>
+</html>

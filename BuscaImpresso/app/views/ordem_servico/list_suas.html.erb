@@ -1,0 +1,27 @@
+<h1>Suas ordens de serviços </h1>
+
+<%= stylesheet_link_tag 'default' %>
+<p style="color: green; font-style: italic"><%= flash[:notice] %></p>
+<% if @suas_os.empty? %>
+Você não possui ordens de serviços 
+<% else %>
+<table border=1>
+<tr>
+	<th>Descrição</th>
+	<th>Qtde.</th>
+	<th>Data</th>
+	<th>Valor R$ </th>
+	<th></th>
+</tr>
+<tr>
+<% @suas_os.each do |os| %>
+	<td><%= os.descricao %></td>
+    <td><%= os.quantidade %></td>
+    <td><%= os.data_entrada %></td>
+    <td><%= os.valor %></td>
+  	<td><%= link_to "Dados do Cliente", :action => "info_cliente", :cliente_id => os.usuario_id %></td>
+</tr>  	
+
+<% end %>
+<% end %>
+</table>

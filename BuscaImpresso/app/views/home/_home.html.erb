@@ -1,0 +1,33 @@
+
+<h5><%= flash[:notice]  %><h5> <br>
+			<h2>Cotação de preços na indústria gráfica</h2>
+		    <p>
+		    <legend></legend>
+
+		  </p>
+		  <% form_for :form_orcamento, @orcamentos, :url => {:controller => 'home', :action => 'gera_orcamentos' } do |u| %>
+
+		  <p><strong>Tipo de Impresso:</strong>
+
+
+<%= u.collection_select :tipo_id, @tipo_impressos, :id, :descricao, options = {:prompt => "Selecione o tipo desejado"}, id => 'selecao_tipo' %>
+
+</p>
+
+<p>
+		<strong>Quantidade:</strong>
+		<input name="form_orcamento[quantidade]" value="100" type="text" size="10" maxlength="10", id="quantidade" />
+
+
+</p>
+
+		  <p><label></label>
+		  <%= submit_tag "     BUSCA IMPRESSO     " %>
+
+            </p>
+		  </form>
+
+	  <p>	        <label for="label"></label>
+
+	  </p>
+	  <%end%>

@@ -1,0 +1,102 @@
+<%= javascript_include_tag :defaults %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Design by BuscaImpresso.com http://www.buscaimpresso.com -->
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /><title>BuscaImpresso.com</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<%= stylesheet_link_tag 'default' %>
+<% javascript_include_tag 'prototype' %>
+<body>
+<div id="header">
+<br><br>
+<div id="logo">
+
+<h1>&nbsp;</h1>
+
+</div>
+</div>
+<div id="menu">
+<ul>
+<li><strong><a href="/" title="">home</a></strong></li>
+<li><strong><a href="/papel" title="">a Receber</a></strong></li>
+<li><strong><a href="/maquina" title="">Recebidos</a></strong></li>
+<li><strong><a href="/processo" title="">Pedidos</a></strong></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div id="content">
+
+<div id="content">
+  <div id="main">
+	<div id="welcome">
+<%= yield %>
+    </div>
+  </div>
+</div>
+<div id="sidebar">
+<div id="login" class="boxed">
+<div class="content">
+Você está logado como a empresa:  <%= session[:usuario] %>
+
+<br> <%= link_to "Sair", :action => "logout", :controller => "home" %>
+</fieldset>
+</form>
+</div>
+</div>
+<div id="updates" class="boxed">
+<h2 class="title"> SUA GRÁFICA</h2>
+<div class="content">
+<ul>
+<%= link_to "Cadastro de Papéis", :action => "list", :controller => "papel" %><br>
+<%= link_to "Parque de Máquinas", :action => "list", :controller => "maquina" %><br>
+<%= link_to "Tipos de Processos", :action => "list", :controller => "processo" %><br>
+<%= link_to "Padrões de Orçamento", :action => "list", :controller => "orcamento" %><br>
+
+
+<%= link_to "Dados de Vendedores", :action => "list", :controller => "vendedor" %><br>
+<%= link_to "Parâmetros do Sistema", :action => "edit", :controller => "parametro", :id => session[:parametro] %><br>
+
+<br>
+<%= link_to "Dados Cadastrais", :action => "edit", :controller => "empresa", :id => session[:id] %>
+
+</ul>
+</div>
+</div>
+<% if session[:passos_cadastro] == 0 %>
+
+<div id="updates" class="boxed">
+<div id="updates" class="content">
+<Strong><font color=red>Informações faltantes:</font></strong><br><br>
+<% if session[:papel].empty? %>
+- Papéis <br>
+<% end %>
+<% if session[:maquina].empty? %>
+- Maquinas <br>
+<% end %>
+<% if session[:processo].empty? %>
+- Processos <br>
+<% end %>
+<% if session[:orcamento].empty? %>
+- Orçamentos <br>
+<% end %>
+<% if session[:vendedor].empty? %>
+- Vendedores <br>
+<% end %>
+<% unless session[:parametros] %>
+- Parâmetros <br>
+<% end %>
+</div>
+</div>
+<% end %>
+
+
+</div>
+<div id="footer">
+<p id="legal">Copyright © 2008 <strong>BuscaImpresso.com</strong>
+- Todos os direitos Reservados - <a href="#">Política de
+Privacidade</a> | <a href="#">Termos de Uso</a></p>
+</div>
+</div>

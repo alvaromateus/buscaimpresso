@@ -1,0 +1,62 @@
+custos
+a materia prima (tinta, papel)
+b transformação (processos(arte final,fotolito,chapa))
+
+a + b + margem lucro = preço venda
+
+maquinas -intercalação, picotar, impressora plana
+
+
+PAPEIS
+insert into empresas (razao_social, login, senha) values ('teste', 'teste',123)
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('COUCHET LISO',660,960,120,0.10,1,'S','N','N','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('OFF-SET',660,960,90,0.04,1,'S','N','N','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('VERGÊ',660,960,120,0.08,3,'N','N','N','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('SUPER BOND',660,960,60,0.03,0,'N','N','S','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('CARTULINA',660,960,150,0.15,1,'N','N','N','PLANO')
+
+insert into papels(descricao, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('PAPEL JORNAL',30,500.15,3,'N','N','N','ROLO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('RECICLATO',660,960,80,0.20,1,'S','N','N','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('FLOR POST',660,960,60,0.05,1,'N','N','S','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('PAPEL CARTÃO',660,960,180,0.15,2,'S','N','N','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('KRAFT',660,960,120,0.10,1,'S','N','N','PLANO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('FORMULARIO CONTÍNUO',216, 279, 56,52.10,1,'N','N','N','FORMULARIO CONTÍNUO')
+
+insert into papels(descricao, lado1, lado2, gramatura, preco_folha, abs_tinta, tira_RETIRA, envelope_pronto, papel_carbono, tipo) values ('ENVELOPE LISO',210,120,60,0.05,1,'S','S','N','PLANO')
+
+
+MAQUINAS
+insert into maquinas (descricao, largura_maxima1,largura_minima1,largura_maxima2,largura_minima2) values('INTERCALAÇÃO', 680,0,520,0)
+
+insert into maquinas (descricao, largura_maxima1,largura_minima1,largura_maxima2,largura_minima2) values('DOBRADEIRA', 680,0,520,0)
+
+insert into maquinas (descricao, largura_maxima1,largura_minima1,largura_maxima2,largura_minima2) values('PICOTAR', 680,0,520,0)
+
+insert into maquinas (descricao, largura_maxima1,largura_minima1,largura_maxima2,largura_minima2,tamanho_pinca,numerador,quebra1000,quebra5000, quebra_5000,reducao_chapado,reducao_numerador,acerto_numerador,quebra_chapado) VALUES ('PLANA',240,0,360,0,8,0,2,1,1,20,0,0,10)
+
+insert into maquinas(descricao,largura_maxima1,largura_minima1,largura_maxima2,largura_minima2,quebra1000,quebra5000, quebra_5000,reducao_chapado,quebra_chapado) VALUES ('ROTATIVA',914,0,578,0,2,1,1,20,10)
+
+insert into maquinas(descricao,largura_maxima1) VALUES ('GUILHOTINA',120)
+
+
+PROCESSOS
+INSERT INTO processos (nome, tempo_minimo,tercerizado,descricao_material,preco_material) values ('ARTE-FINAL',30,'N','MÃO-DE-OBRA',50)
+INSERT INTO processos (nome, tempo_minimo,tercerizado,descricao_material,preco_material, multiplicar,produtividade,quantidade_acerto) values ('REFILE',10,'N','PAPEL',50,1,1,1)
+INSERT INTO processos (nome, tempo_minimo,tercerizado,descricao_material,preco_material, multiplicar,produtividade,quantidade_acerto) values ('FOTOLITO',10,'N','PAPEL',50,1,1,1)
+INSERT INTO processos (nome, tempo_minimo,tercerizado,descricao_material,preco_material, multiplicar,produtividade,quantidade_acerto) values ('CONFECÇÃO DE CHAPAS',10,'N','PAPEL',50,1,1,1)
+INSERT INTO processos (nome, tempo_minimo,tercerizado,descricao_material,preco_material, multiplicar,produtividade,quantidade_acerto) values ('IMPRESSÃO',10,'N','PAPEL',50,1,1,1)
+
+PLANOS
+insert into planos (descricao, quant_transacoes, suporte,gestao_comercial, valor, periodo) values ('GRÁTIS',10,0,0,0,0)
+insert into planos (descricao, quant_transacoes, suporte,gestao_comercial, valor, periodo) values ('BÁSICO',50,0,0,34.90,1)
+insert into planos (descricao, quant_transacoes, suporte,gestao_comercial, valor, periodo) values ('MÉDIO',100,0,0,64.90,1)
+insert into planos (descricao, quant_transacoes, suporte,gestao_comercial, valor, periodo) values ('EMPRESARIAL',500,0,0,94.90,1)

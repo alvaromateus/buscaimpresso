@@ -1,0 +1,76 @@
+Selecione um dos modelos abaixo para a criação do processo:<br>
+<%= link_to_remote "IMPRESSÃO", :url => {:action => 'altera_processo', :processo => 'IMPRESSAO'	 }%> -
+<%= link_to_remote "FOTOLITO", :url => {:action => 'altera_processo', :processo => 'FOTOLITO'	 }%> -
+<%= link_to_remote "CHAPAS", :url => {:action => 'altera_processo', :processo => 'CHAPAS'	 }%> -
+<%= link_to_remote "REFILE", :url => {:action => 'altera_processo', :processo => 'REFILE'	 }%> -
+<%= link_to_remote "PICOTAR", :url => {:action => 'altera_processo', :processo => 'PICOTAR'	 }%> -
+<%= link_to_remote "ARTE-FINAL", :url => {:action => 'altera_processo', :processo => 'ARTE'	 }%>
+
+
+<% form_for :processo, @processo, :url => {:action => 'edit' } do |u| %>
+<br>
+
+
+<p>
+<label_for"nome">Nome: </label><br>
+<%= u.text_field "nome", :size => 30 %>
+</p>
+
+<p>
+<label_for"razao_social">Papel: </label>
+<%= u.collection_select :papel_id, @papeis, :id, :descricao, options = {:prompt => "Selecione um papel"} %>
+</p>
+
+<p>
+<label_for"razao_social">Maquina: </label>
+<%= u.collection_select :maquina_id, @maquinas, :id, :descricao, options = {:prompt => "Selecione uma maquina"} %>
+</p>
+
+<p>
+<label_for"terceirizado">Processo terceirizado: </label>
+<%= u.check_box "tercerizado" %>
+
+</p>
+
+<p>
+<label_for"descricao material">Descrição do material utilizado no processo: </label><br>
+<%= u.text_field "descricao_material", :size => 30 %>
+</p>
+
+<p>
+<label_for"preco material">Custo: </label>
+(R$) <%= u.text_field "custo", :size => 5 %> (para processos sem máquina e papel)
+</p>
+
+<p>
+<label_for"multiplicar">Número de vias: </label>
+<%= u.text_field "multiplicar", :size => 5 %>(usado em blocos)
+</p>
+
+<p>
+<label_for"paginas">Quantidade de páginas: </label>
+<%= u.text_field "quantidade_paginas", :size => 5 %>
+</p>
+
+<p>
+<label_for"produtividade">Quantidade/hora produzida: </label>
+<%= u.text_field "produtividade", :size => 5 %>
+</p>
+
+<p>
+<label_for"quantidade acerto">Percentual de quantidade mínima para acerto: </label>
+<%= u.text_field "quantidade_acerto" , :size => 5 %> (%)
+</p>
+
+<p>
+<label_for"icms">Cores: </label><br>
+<select name="processo[cor]" id="processo" class="text">
+						<option selected='selected'>...</option>
+                        <option value='COLORIDO' <% if @processo.cor == 'COLORIDO'  %>  selected='selected' <% end %> >COLORIDO</option>
+                        <option value='PRETO' <% if @processo.cor == 'PRETO'  %>  selected='selected' <% end %>> PRETO</option>
+</select>
+</p>
+
+<%= submit_tag "Salvar" %> ou <%= link_to "Cancelar", :action => "list", :controller => "processo" %>
+<% end -%>
+<br>

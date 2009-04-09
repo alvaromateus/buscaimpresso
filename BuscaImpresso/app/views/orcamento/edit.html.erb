@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag 'default' %>
+<h1>Tipos de Orçamento</h1>
+
+<% if error_messages_for "orcamento" %><strong>Seguintes erros encontrados</strong><br><% end %>
+
+<div class="erro">
+<%= error_messages_for "orcamento" %><br>
+</div>
+
+<div class="form">
+
+<div id="processos">
+
+</div>
+<%= render :partial => 'form' %>
+</div>

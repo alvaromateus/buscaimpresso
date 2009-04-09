@@ -1,0 +1,6 @@
+Lista de Papéis do Processo<br>
+<% @papeis_processo.each do |p| %>
+<%= p.descricao %>
+<%= link_to_remote "Remover papel", :update => "papeis", :url => { :action => "remove_papel", :papel => p } %>
+<br>
+<% end %><br>

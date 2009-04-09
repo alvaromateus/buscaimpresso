@@ -1,0 +1,30 @@
+<h1>Ordens de serviços Pendentes</h1>
+
+<%= stylesheet_link_tag 'default' %>
+<p style="color: green; font-style: italic"><%= flash[:notice] %></p>
+
+<% if @os_pendentes.empty? %>
+Não há ordens de serviço pendentes
+<% else %>
+
+<table border="1" cellpading="0" cellpacing="0">
+
+<tr>
+	<th>Descrição</th>
+	<th>Qtde.</th>
+	<th>Data</th>
+	<td>Valor R$ </th>
+	<th></th>
+
+</tr>
+<% @os_pendentes.each do |os| %>
+<tr>
+	<td><%= os.descricao %></td>
+    <td><%= os.quantidade %></td>
+    <td><%= os.data_entrada %></td>
+    <td><%= os.valor %></td>
+  	<td><%= link_to "Associar-se", :action => "associa", :vendedor_id => session[:id], :os_id => os.id %></td>
+</tr>
+<% end %>
+<% end %>
+</table>

@@ -1,0 +1,14 @@
+<% form_for :form_login, @u, :url => {:action => 'login', :controller => 'home' } do |l| %>
+<p>
+<label_for"login">Usuario: </label><br>
+<%= l.text_field "login", :size => 20 %>
+
+</p>
+
+<p>
+<label_for"login">Senha: </label><br>
+<%= l.password_field "senha", :size => 10 %>
+</p>
+<%= submit_tag "Logar" %>
+<% end -%>
+<br> <%= link_to "Esqueci a Senha", :action => "nova_senha"%>

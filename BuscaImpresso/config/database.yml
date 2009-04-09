@@ -1,0 +1,6 @@
+development:
+  adapter: mysql
+  database: buscaimpresso
+  host: localhost
+  encoding: utf8
+  username: root

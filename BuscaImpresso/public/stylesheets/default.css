@@ -1,0 +1,365 @@
+/*
+Design por Buscaimpresso.com
+http://www.buscaimpresso.com
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #FFFFFF;
+	font: normal small Arial, Helvetica, sans-serif;
+	color: #999999;
+}
+
+.form {
+	margin-bottom: 1em;
+	background: #FFFFFF;
+	border: 1px solid #CAD4DF;
+	padding: 10px 0 0 10px;
+}
+
+.erro {
+
+	color: #FD1B05;
+	font: bold small Arial, Helvetica, sans-serif;
+}
+
+form {
+}
+
+fieldset {
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #385B88;
+}
+
+h2 {
+	margin-bottom: .5em;
+	font-size: 1.8em;
+}
+
+h3 {
+	margin-bottom: 1em;
+	font-size: 1em;
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 1.5em;
+	line-height: 1.8em;
+}
+
+p {
+}
+
+blockquote {
+	margin-left: 3em;
+	font-style: italic;
+}
+
+ul {
+	margin-left: 2em;
+	list-style: square;
+}
+
+ul li {
+}
+
+ol {
+	margin-left: 2em;
+	list-style: lower-alpha;
+}
+
+ol li {
+}
+
+a {
+	color: #EA672E;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #385B88;
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+img.right {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+/* Boxed Style */
+
+.boxed {
+	margin-bottom: 1em;
+	background: #FFFFFF;
+	border: 1px solid #CAD4DF;
+}
+
+.boxed .title {
+	padding: 10px 0 0 10px;
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.boxed .content {
+	padding: 10px;
+}
+
+/* Header */
+
+#header {
+	width:  700px;
+	height: 145px;
+	margin: 0 auto;
+}
+
+/* Header > Logo */
+
+#logo {
+	height: 180px;
+	color: #CCCCCC;
+	background-image: url("/images/logo.jpg") ;
+	background-repeat: no-repeat ;
+}
+
+#logo h1 {
+	padding: 60px 0 0 0;
+	text-transform: uppercase;
+	font-size: 3em;
+}
+
+#logo h2 {
+	margin: 0;
+	padding: 5px 0 0 70px;
+	text-transform: uppercase;
+	font-size: 1.6em;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #385B88;
+}
+
+/* Header > Top Menu */
+
+#topmenu {
+	float: right;
+	margin: 0 -400px 0 0;
+}
+
+#topmenu ul {
+	margin: 0;
+	list-style: none;
+}
+
+#topmenu li {
+
+}
+
+#topmenu a {
+	display: block;
+	float: left;
+	height: 34px;
+}
+
+#topmenu a:hover {
+}
+
+#topmenu span {
+	display: none;
+}
+
+#topmenu1 {
+	width: 30px;
+	background: url(images/img02.gif) no-repeat left center;
+}
+
+#topmenu2 {
+	width: 31px;
+	background: url(images/img03.gif) no-repeat left center;
+}
+
+#topmenu3 {
+	width: 35px;
+	background: url(images/img04.gif) no-repeat left center;
+}
+
+/* Menu */
+
+#menu {
+	width: 700px;
+	height: 10px;
+	margin: 0px auto 0 auto;
+	padding: 0 0 0 150px;
+}
+
+#menu ul {
+	margin: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	padding: 0 2.0em 0 0;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: .9em;
+	font-weight: bold;
+}
+
+#menu a:hover {
+	text-decoration: underline;
+}
+
+#menu .first a {
+	padding-left: 0;
+	background: none;
+}
+
+/* Content */
+
+#content {
+	width: 700px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+/* Content > Main */
+
+#main {
+	float: left;
+	width: 460px;
+}
+
+/* Content > Main > Example */
+
+#example {
+}
+
+/* Content > Main > Welcome */
+
+
+
+/* Content > Sidebar */
+
+#sidebar {
+	float: right;
+	width: 220px;
+	margin: -165px 0 0 0;
+}
+
+/* Content > Sidebar > Login */
+
+#login {
+}
+
+#login label {
+	display: block;
+}
+
+#login #inputtext1, #login #inputtext2 {
+	width: 180px;
+	margin-bottom: .5em;
+	padding: 2px 5px;
+	border: 1px solid #CCCCCC;
+	font: normal small Arial, Helvetica, sans-serif;
+	color: #999999;
+}
+
+#login #inputsubmit1 {
+	float: right;
+	width: 60px;
+	margin-right: 7px;
+	border: 1px solid #CCCCCC;
+	border-top-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	font: normal small Arial, Helvetica, sans-serif;
+}
+
+#login p {
+	margin: 0;
+	padding-top: .2em;
+	font-size: x-small;
+}
+
+/* Content > Sidebar > Updates*/
+
+#updates {
+}
+
+#updates ul {
+	margin: 0;
+	list-style: none;
+}
+
+#updates li {
+	margin-bottom: 1em;
+}
+
+#updates h3 {
+	margin: 0;
+	padding: 0 0 0 10px;
+	font-size: x-small;
+}
+
+#updates p {
+	margin: 0;
+	padding: 0 0 0 10px;
+	line-height: normal;
+	font-size: .85em;
+}
+
+#updates a {
+	text-decoration: none;
+}
+
+/* Content > Sidebar > Partners*/
+
+#partners {
+}
+
+/* Footer */
+
+#footer  {
+	text-align: left;
+	background-color: #FFFFFF;
+	color: #999;
+	padding: 2px 0;
+	font-size: x-small;
+	line-height: 1.4em;
+	margin-top: 21px;
+	clear: both;
+}
+
+#conteudo {
+text-decoration: none;
+font-style:italic;
+border-bottom: 1px dashed #999;
+}

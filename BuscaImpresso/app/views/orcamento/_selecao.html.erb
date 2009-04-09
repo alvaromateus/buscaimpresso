@@ -1,0 +1,5 @@
+Clique sobre o processo para adicioná-lo
+<% @processos.each do |processo| %><br>
+<%= link_to_remote processo[:nome], :update => "processos", :url => { :action => "novo_processo", :processo => processo } %>
+<% end %>
+<br><br>

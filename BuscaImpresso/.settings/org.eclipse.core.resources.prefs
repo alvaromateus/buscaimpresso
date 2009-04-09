@@ -1,0 +1,9 @@
+#Wed Jan 07 13:33:18 BRST 2009
+eclipse.preferences.version=1
+encoding//app/controllers/home_controller.rb=UTF-8
+encoding//app/controllers/orcamento_controller.rb=UTF-8
+encoding//app/views/home/_orcamentos.html.erb=UTF-8
+encoding//app/views/maquina/_form.html.erb=UTF-8
+encoding//app/views/papel/_form.html.erb=UTF-8
+encoding//app/views/processo/_form.html.erb=UTF-8
+encoding/<project>=UTF-8

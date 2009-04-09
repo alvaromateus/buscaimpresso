@@ -1,0 +1,17 @@
+<h1>Dados do Cliente </h1>
+<%= stylesheet_link_tag 'default' %>
+<p style="color: green; font-style: italic"><%= flash[:notice] %></p>
+<table border="0" cellpading="1" cellpacing="1">
+<tbody>
+<tr>
+	<td>Nome</td>
+	<td>Telefone</td>
+	<td>Email </td>
+</tr>
+<tr>
+	<td><%= @cliente.nome %></td>
+    <td><%= @cliente.fone %></td>
+    <td><%= @cliente.email %></td>
+</tr>
+<tbody>
+</table>

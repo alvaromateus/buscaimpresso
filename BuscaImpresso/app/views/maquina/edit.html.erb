@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag 'default' %>
+
+<% if error_messages_for "maquina" %><strong>Seguintes erros encontrados</strong><br><% end %>
+
+<div class="erro">
+<%= error_messages_for "maquina" %><br>
+</div>
+
+<div class="form">
+<h1>Máquinas </h1>
+<%= render :partial => 'form' %>
+</div>

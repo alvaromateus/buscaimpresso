@@ -1,0 +1,10 @@
+<html>
+<%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag 'default' %>
+
+<h1><% if @vendedor.new_record? %>Cadastro de Vendedores <% else %> Editando o usuário <%= @vendedor.nome %> <% end %></h1>
+<%= error_messages_for "vendedor" %>
+<div class="form">
+<%= render :partial => 'form' %>
+</div>
+</html>

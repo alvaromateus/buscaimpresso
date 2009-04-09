@@ -1,0 +1,26 @@
+<h1>Máquinas</h1>
+<%= stylesheet_link_tag 'default' %>
+
+<% if flash[:notice] %>
+
+<p style="color: green; font-style: italic"><%= flash[:notice] %></p>
+<% end %>
+
+<p> <%= link_to "Nova Máquina", :action => "edit" %></p>
+<table border="0" cellpading="1" cellpacing="1">
+<tbody>
+<tr>
+	<tt></tt>
+
+</tr>
+<% @maquinas.each do |maquina| %>
+<tr>
+	<td><%= maquina.descricao %><td>
+	<td>
+		<%= link_to "Editar", :action => "edit", :id => maquina %> ou
+		<%= link_to "Excluir", { :action => "delete", :id => maquina }, :confirm => "Deseja realmente excluir a máquina?" %>
+	</td>
+</tr>
+<tbody>
+<% end %>
+</table>

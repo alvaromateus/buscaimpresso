@@ -1,0 +1,58 @@
+Selecione um dos modelos abaixo para a criação de um tipo de orçamento:<br>
+<%= link_to_remote "CARTÃO DE VISITA", :url => {:action => 'altera_orcamento', :orcamento => 'CARTAO'	 }%> -
+<%= link_to_remote "REVISTA", :url => {:action => 'altera_orcamento', :orcamento => 'REVISTA'	 }%> -
+<%= link_to_remote "NOTA FISCAL", :url => {:action => 'altera_orcamento', :orcamento => 'NOTA'	 }%> -
+<%= link_to_remote "JORNAL", :url => {:action => 'altera_orcamento', :orcamento => 'JORNAL'	 }%> -
+<%= link_to_remote "PANFLETO", :url => {:action => 'altera_orcamento', :orcamento => 'FOLHETO'	 }%>
+
+<% form_for :orcamento, @orcamento, :url => {:action => 'edit' } do |u| %>
+<br>
+<%= link_to_remote "Adicionar processo ao tipo de orçamento", :update => "processo", :url => { :action => "adiciona_processo"} %>  <br>
+
+<div id="processo"></div>
+
+<p>
+<label_for"Descricao">Descrição: </label><br>
+
+<%= u.text_field "descricao", :size => 35 %>
+</p>
+<p>
+<label_for"Tipo">Tipo: </label>
+
+<%= u.collection_select :tipo_id, @tipo_impressos, :id, :descricao, options = {:prompt => "Selecione o tipo desejado"} %>
+
+</p>
+
+<p>
+<label_for"iss">ISS: </label>
+<%= u.text_field "ISS", :size => 5 %>(%)
+</p>
+
+<p>
+<label_for"ipi">IPI: </label>
+<%= u.text_field "IPI", :size => 5 %>(%)
+</p>
+
+<p>
+<label_for"isv">ISV: </label>
+<%= u.text_field "ISV", :size => 5 %>(%)
+</p>
+
+<p>
+<label_for"icms">ICMS: </label>
+<%= u.text_field "ICMS", :size => 5 %> (%)
+</p>
+
+<p>
+<label_for"icms">Lado 1: </label>
+<%= u.text_field "lado1", :size => 5 %> (mm)
+</p>
+
+<p>
+<label_for"icms">Lado 2: </label>
+<%= u.text_field "lado2", :size => 5 %> (mm)
+</p>
+
+<%= submit_tag "Salvar" %> ou <%= link_to "Cancelar", :action => "list", :controller => "orcamento" %>
+<% end -%>
+<br>

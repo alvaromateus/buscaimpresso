@@ -1,0 +1,36 @@
+<% form_for :vendedor, @vendedor, :url => {:action => 'edit' } do |u| %>
+<p>
+<label_for"nome">Nome: </label><br>
+<%= u.text_field "nome", :size => 40 %>
+</p>
+
+<p>
+<label_for"login">Login: </label>
+<%= u.text_field "login", :size => 20 %>
+</p>
+
+<p>
+<label_for"senha">Senha: </label>
+<%= u.password_field "senha", :size => 10 %>
+</p>
+
+<p>
+<label_for"fone">Telefone: </label>
+<%= u.text_field "fone", :size => 10 %> (Ex: 3229-5543)
+</p>
+
+<p>
+<label_for"email">Email: </label>
+<%= u.text_field "email" %>
+</p>
+
+<p>
+<label_for"comissa">Comissão: </label>
+<%= u.text_field "comissao", :size => 5 %> (%)
+</p>
+
+<%= submit_tag "Salvar" %> ou <%= link_to "Cancelar", :action => "list" %>
+
+<% end -%>
+
+<br>
