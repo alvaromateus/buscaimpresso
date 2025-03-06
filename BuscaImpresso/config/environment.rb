@@ -63,8 +63,8 @@ Rails::Initializer.run do |config|
   :port => 587,
   :authentication => :plain,
   :domain => "buscaimpresso.com",
-  :user_name => "alvaromateus@gmail.com",
-  :password => 'cici963012'
+  :user_name => "email@gmail.com",
+  :password => 'senha'
 }  
  
   $KCODE = 'u'
